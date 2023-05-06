@@ -1,0 +1,29 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    background: url("./background.png");
+    background-size: cover;
+}
+
+#board {
+    width: 540px;
+    height: 540px;
+    /* background-color: beige; */
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    background: url("./grass.png");
+    background-size: cover;
+    border: 3px solid green;
+    border-radius: 25px; 
+} 
+
+#board div {
+    /* board = 540 x 540, divide into 3x3 tiles --> 180 x 180 per div */
+    width: 180px; 
+    height: 180px;
+    background-image: url("./hole.png");
+    background-size: cover;
+}
