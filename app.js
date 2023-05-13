@@ -1,4 +1,5 @@
-let currMoleTile;
+let currDiglettTile;
+let currPikachuTile;
 
 
 window.onload = function() {
@@ -14,7 +15,8 @@ function setGame() {
         document.getElementById("board").appendChild(tile); 
     }
 
-    setInterval(setMole, 2000); //2000 milliseconds = 2 seconds 
+    setInterval(setDiglett, 1000); //1000 milliseconds = 1 second, every 1 second call setDiglett  
+    setInterval(setPikachu, 2000); //2000 milliseconds = 2 seconds, every 2 second call setPikachu
 }
 
 function getRandomTile () {
@@ -23,12 +25,30 @@ function getRandomTile () {
     return num.toString();
 }
 
-function setMole() {
+function setDiglett() {
 
-    let mole = document.createElement ("img");
-    mole.src = "./diglett.png";
+    if (currDiglettTile) {
+        currDiglettTile.innerHTML = "";
+    }
+
+    let diglett = document.createElement("img");
+    diglett.src = "./diglett.png";
 
     let num = getRandomTile();
-    currMoleTile = document.getElementById(num);
-    currMoleTile.appendChild(mole);
+    currDiglettTile = document.getElementById(num);
+    currDiglettTile.appendChild(diglett); 
+}
+
+function setPikachu() {
+
+    if (currPikachuTile) {
+        currPikachuTile.innerHTML = "";
+    }
+
+    let pikachu = document.createElement("img");
+    pikachu.src = "./pikachu.png"; 
+
+    let num = getRandomTile();
+    currPikachuTile = document.getElementById(num);
+    currPikachuTile.appendChild(pikachu);
 }

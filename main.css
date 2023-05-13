@@ -8,7 +8,7 @@ body{
 #board {
     width: 540px;
     height: 540px;
-    /* background-color: beige; */
+    /* background-color: green */
 
     margin: 0 auto;
     display: flex;
@@ -31,6 +31,6 @@ body{
 #board div img {
     /* all img tags inside the tile div tags */
     width: 100px;
-    height: 100px;
-    align-items: center;
+    height: 100px; 
+        
 }
