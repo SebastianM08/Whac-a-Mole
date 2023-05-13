@@ -8,26 +8,27 @@ window.onload = function() {
     setGame();
 }
 
+ //set up the grid for the game board in html (3x3 tile = 9 tiles)
 function setGame() {
-    //set up the grid for the game board in html
-    for (let i = 0; i < 9; i++) { //i goes from 0 to 8, stops at 9
+         //i goes from 0 to 8, stops at 9 (because i is less than 9)
+    for (let i = 0; i < 9; i++) { 
         //<div id="0-8"></div> use to figure out which tile was clicked on, diglett or pikachu 
         let tile = document.createElement("div");
         tile.id = i.toString();
-        //listen for a click and its going to call select tile 
+        //listen for a click and its going to call "select tile" 
         tile.addEventListener("click", selectTile);
         document.getElementById("board").appendChild(tile); // taking the 9 tags and accessing this tag (board) inserting in the div tag 
     }
 
     //Intervals 
-    setInterval(setDiglett, 1000); //1000 milliseconds = 1 second, every 1 second call setDiglett, its going to place a diglett in a tile 
-    setInterval(setPikachu, 2000); //2000 milliseconds = 2 seconds, every 2 second call setPikachu, its going to place a pikachu in a tile
+    setInterval(setDiglett, 1000); //1000 milliseconds = 1 second, every 1 second setDiglett its been call, its going to place a diglett in a tile 
+    setInterval(setPikachu, 2000); //2000 milliseconds = 2 seconds, every 2 second setPikachu its been call, its going to place a pikachu in a tile
 }
 
-//Random number
+//Random number function
 function getRandomTile () {
     // math.random --> (0-1) * 9 = (0-9) --> round down to (0-8) get an integers 
-    let num = Math.floor(Math.random() * 9); //returns a number between 0 and 1 multiply by 9 range becomes 0-9(does not included 9) round it down we get an integer 0-8
+    let num = Math.floor(Math.random() * 9); //returns a number between 0 and 1, multiply by 9 range becomes 0-9(does not included 9) round it down we get an integer from 0-8
     return num.toString(); // return the number as a string for the ID
 }
 
@@ -35,7 +36,8 @@ function setDiglett() {
     if(gameOver) { //player not able to select the tile  
         return;
     }
-//Clear the previous tile
+
+    //Clear the previous tile
     if (currDiglettTile) { // clear all the tags within this div tag 
         currDiglettTile.innerHTML = ""; // empty string 
     }
@@ -44,12 +46,13 @@ function setDiglett() {
     diglett.src = "./diglett.png";
 
     let num = getRandomTile(); //function 
+
     //Resolved the conflict to show either diglett or pikachu 
     if (currPikachuTile && currPikachuTile.id == num) { // this means the tile already has pikachu on it 
         return; //pikachu is not set in this round 
     }
     currDiglettTile = document.getElementById(num); 
-    currDiglettTile.appendChild(diglett); //takes a a random tile (div tag) and add the img inside it
+    currDiglettTile.appendChild(diglett); //takes a a random tile (div tag) and add the img tag inside it
 }
 
 function setPikachu() {
@@ -65,6 +68,7 @@ function setPikachu() {
     pikachu.src = "./pikachu.png"; 
 
     let num = getRandomTile(); //function 
+   
     //Resolved the conflict to show either diglett or pikachu 
     if (currDiglettTile && currDiglettTile.id == num) { // this means the tile already has diglett on it 
         return; // diglett is not set in this round 
@@ -88,10 +92,10 @@ function selectTile() {
     }
 }
 
-//Restart Game
-const restartButton = document.getElementById("restart");
-//Add event listener to restart button
-restartButton.addEventListener("click", () => {
+    //Restart Game
+    const restartButton = document.getElementById("restart");
+    //Add event listener to restart button
+    restartButton.addEventListener("click", () => {
     //Reset Variables
      currDiglettTile;
      currPikachuTile;
