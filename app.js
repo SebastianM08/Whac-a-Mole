@@ -92,5 +92,5 @@ restartButton.addEventListener("click", () => {
      currPikachuTile;
      score = 0; 
      gameOver = false; 
-    //Reset Game board 
+     
 }); 
