@@ -16,7 +16,7 @@ The goal is to click on Pikachu every time he appears from the pokeball and avoi
 
 ### Post-MVP Plan 
 -Add Music
--Timer
+-Timer (time limit)
 -Reset the score to 0 when clicking "restart" 
 
 ## Project Planning 
