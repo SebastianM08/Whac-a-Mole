@@ -1,3 +1,4 @@
+// variables
 let currDiglettTile;
 let currPikachuTile;
 let score = 0;
@@ -17,15 +18,16 @@ function setGame() {
         document.getElementById("board").appendChild(tile); 
     }
 
-    setInterval(setDiglett, 1000); //1000 milliseconds = 1 second, every 1 second call setDiglett  
+    //Intervals 
+    setInterval(setDiglett, 1000); //1000 milliseconds = 1 second, every 1 second call setDiglett, its going to place a diglett in a tile 
     setInterval(setPikachu, 2000); //2000 milliseconds = 2 seconds, every 2 second call setPikachu
 }
 
-
+//Random number
 function getRandomTile () {
-    // math.random --> (0-1) * 9 = (0-9) --> round down to (0-9) integers 
-    let num = Math.floor(Math.random() * 9);
-    return num.toString();
+    // math.random --> (0-1) * 9 = (0-9) --> round down to (0-9) get an integers 
+    let num = Math.floor(Math.random() * 9); //returns a number between 0 and 1 multiply by 9 range becomes 0-9(does not included 9) round it down we get an integer 0-8
+    return num.toString(); // return the number for the ID
 }
 
 function setDiglett() {
@@ -44,8 +46,8 @@ function setDiglett() {
     if (currPikachuTile && currPikachuTile.id == num) {
         return;
     }
-    currDiglettTile = document.getElementById(num);
-    currDiglettTile.appendChild(diglett); 
+    currDiglettTile = document.getElementById(num); 
+    currDiglettTile.appendChild(diglett); //random tile and add the img inside
 }
 
 function setPikachu() {
@@ -65,7 +67,7 @@ function setPikachu() {
         return;
     }
     currPikachuTile = document.getElementById(num);
-    currPikachuTile.appendChild(pikachu); 
+    currPikachuTile.appendChild(pikachu); //random tile and add the img inside 
 }
 
 function selectTile() {
@@ -94,3 +96,10 @@ restartButton.addEventListener("click", () => {
      gameOver = false; 
      
 }); 
+
+
+
+//Sources:
+//https://www.youtube.com/watch?v=JsErMawwdOw&t=1101s
+//https://www.youtube.com/watch?v=D9ZfzXaCPuI&t=811s
+//https://www.w3schools.com/js/
