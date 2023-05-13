@@ -9,17 +9,17 @@ I decided to make the game a bit more fun by making it a Pokemon themed game.
 For each hole we have a pokeball, as the mole we have pikachu and also we have diglett 
 The goal is to click on Pikachu every time he appears from the pokeball and avoid clicking on Diglett or you'll be out of luck.
 
-MVP Criteria
+### MVP Criteria
 -Game must be playable
 -Score Function
 -Restart function 
 
-Post-MVP Plan 
+### Post-MVP Plan 
 -Add Music
 -Timer
 -Reset the score to 0 when clicking "restart" 
 
-Project Planning 
+## Project Planning 
 Monday 5/1: Create github repository. Complete Readme.md.
 Wednesday 5/3: Start coding 
 Saturday 5/6: Start testing code in Live server
